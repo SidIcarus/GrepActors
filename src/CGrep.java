@@ -6,9 +6,9 @@ import akka.actor.Props;
 /**
  * @author Group 6
  *
- *Main file for GrepActors. Takes in command line arguments for 
- *the pattern and file namesthat creates a Collection Actor with a Filecount, 
- *and a ScanActor for each file.
+ * Main file for GrepActors. Takes in command line arguments for 
+ * the pattern and file names that creates a Collection Actor with a Filecount, 
+ * and a ScanActor for each file.
  */
 public class CGrep{
 	/**
@@ -20,8 +20,7 @@ public class CGrep{
 		int filecount = 0;		
 		
 		if (args.length == 0){
-			System.out.println("Incorrect input. Use the following format");
-			System.out.println("java CGrep pattern [file . . .]");
+			System.out.println("Invalid input. Correct Format: java CGrep pattern [file . . .]");
 			System.exit(0);
 		}
 		
