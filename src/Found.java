@@ -1,9 +1,9 @@
 import java.util.List;
 
 /**
- * @author Stefan Neamtu
- * 
  * Class file for Found object, an object used to hold all found items in a file
+ * 
+ * @author Goup 6
  */
 public class Found {
 	
@@ -41,11 +41,10 @@ public class Found {
 	 */
 	public String toString(){
 		String output = name +" .";
-		for(int i = 0; i < list.size(); i++){
+		for(int i = 0; i < list.size(); i++)
 			output = output + list.get(i) + " .";
-		}
-		return output;
 		
+		return output;
 	}
 
 }

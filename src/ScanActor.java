@@ -1,6 +1,9 @@
 import akka.actor.UntypedActor;
 
-
+/**
+ * 
+ * @author Group 6
+ */
 public class ScanActor extends UntypedActor {
 
 	@Override

@@ -1,5 +1,9 @@
 import akka.actor.UntypedActor;
 
+/**
+ * 
+ * @author Group 6
+ */
 public class CollectionActor extends UntypedActor {
 	
 	public CollectionActor(){}
