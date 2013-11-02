@@ -1,7 +1,8 @@
 import java.util.List;
 
-
 /**
+ * @author Stefan Neamtu
+ * 
  * Class file for Found object, an object used to hold all found items in a file
  */
 public class Found {
