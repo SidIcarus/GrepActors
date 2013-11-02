@@ -55,7 +55,7 @@ public class CGrep {
 		if(!files.isEmpty()){
 			for(int i = 0; i < files.size(); i++){
 				ActorRef sActor = system.actorOf(Props.create(ScanActor.class));
-				sActor.tell(new Configure(files.get(i),pattern,cActor));
+				sActor.tell(new Configure(files.get(i),pattern,cActor), cActor);
 			}
 		}
 		else{
