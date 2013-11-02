@@ -46,7 +46,7 @@ public class CGrep {
 		 * Creates the Collection Actor and tells it the filecount
 		 */
 		ActorSystem system = ActorSystem.create("CGrep");
-		ActorRef cActor = system.actorOf(new Props(CollectionActor.class));
+		ActorRef cActor = system.actorOf(Props.create(CollectionActor.class));
 		cActor.tell(new FileCount(filecount), cActor);
 		
 		/*
@@ -54,12 +54,12 @@ public class CGrep {
 		 */
 		if(!files.isEmpty()){
 			for(int i = 0; i < files.size(); i++){
-				ActorRef sActor = system.actorOf(new Props(ScanActor.class));
+				ActorRef sActor = system.actorOf(Props.create(ScanActor.class));
 				sActor.tell(new Configure(files.get(i),pattern,cActor));
 			}
 		}
 		else{
-				ActorRef sActor = system.actorOf(new Props(ScanActor.class));
+				ActorRef sActor = system.actorOf(Props.create(ScanActor.class));
 				sActor.tell(new Configure(null,pattern,cActor), cActor);
 			}
 		
