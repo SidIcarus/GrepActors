@@ -11,10 +11,22 @@ public class Configure {
 	private final String name;
 	private final String pattern;
 	private final ActorRef cActor;
-	
+
 	public Configure(String name, String pattern, ActorRef cActor){
 		this.name = name;
 		this.pattern = pattern;
 		this.cActor = cActor;	
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public String getPattern() {
+		return pattern;
+	}
+
+	public ActorRef getcActor() {
+		return cActor;
 	}
 }
