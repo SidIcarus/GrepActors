@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 public class ScanActor extends UntypedActor {
 	private String fileName;
 	private String patternString;
-	private CollectionActor cActor;
+	private ActorRef cActor;
 	private Pattern pattern;
 	
 	/*
@@ -43,9 +43,19 @@ public class ScanActor extends UntypedActor {
 	@Override
 	public void onReceive(Object arg0) throws Exception {
 		if (arg0.getClass() == Configure.class){
-			this.fileName = "";
-					
+			this.fileName = ((Configure) arg0).getName();
+			this.patternString = ((Configure) arg0).getPattern();
 			this.pattern = Pattern.compile(this.patternString);
+			this.cActor = ((Configure) arg0).getcActor();
+			
+			//read files from stdin or the file provided
+			if(this.fileName != null) {
+				this.scanFile();
+			} else {
+				this.fileName = "stdin";
+				this.scanStdIn();
+			}
+			
 		}
 	}
 	
@@ -55,7 +65,8 @@ public class ScanActor extends UntypedActor {
 	 * CollectionActor.
 	 */
 	private void scanStdIn(){
-		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		cActor.tell((new Found(this.fileName, this.read(br))), this.getSelf());
 	}
 	
 	/*
@@ -64,7 +75,13 @@ public class ScanActor extends UntypedActor {
      * sends the results in a Found message to the CollectionActor.
 	 */
 	private void scanFile(){
-		
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(this.fileName));
+			cActor.tell((new Found(this.fileName, this.read(br))), this.getSelf());
+		} catch(FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/*
@@ -77,6 +94,25 @@ public class ScanActor extends UntypedActor {
 	 */
 	private ArrayList<String> read(BufferedReader buffRead){
 		ArrayList<String> text = new ArrayList<String>();
+		String textLine;
+		int textLineNumber = 0;
+		
+		try {
+			while((textLine = buffRead.readLine()) != null) {
+				Matcher matcher = pattern.matcher(textLine);
+				if(matcher.find())
+					text.add(textLineNumber + " " + textLine);
+				textLineNumber++;
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				buffRead.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		return text;
 	}

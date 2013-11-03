@@ -11,12 +11,34 @@ import akka.actor.UntypedActor;
  */
 public class CollectionActor extends UntypedActor {
 	
-	public CollectionActor(){}
+	private int numOfFiles;
+	private int founds;
+	
+	public CollectionActor(){
+		
+	}
 
 	@Override
 	public void onReceive(Object arg0) throws Exception {
-		// TODO Auto-generated method stub
-		
+		if(arg0.getClass() == FileCount.class) {
+			this.numOfFiles = ((FileCount) arg0).filecount;
+		} else if(arg0.getClass() == Found.class) {
+			Found found = (Found)arg0;
+			
+			if(!found.getList().isEmpty()) {
+				System.out.println("Matching lines for " + found.getName() + ":");
+				for(String s : found.getList()) {
+					System.out.println(s);
+				}
+			} else {
+				System.out.println("No matching lines were found for " + found.getName() + ".");
+			}
+			
+			if(founds++ >= numOfFiles) {
+				this.getContext().system().shutdown();
+				
+			}
+		}
 	}
 
 	
