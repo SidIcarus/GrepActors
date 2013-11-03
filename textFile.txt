@@ -1,0 +1,46 @@
+SWEN-342 Engineering Of Concurrent & Distributed Software Systems
+Concurrent Grep With Actors
+This activity will be done with your Project 2 group.
+
+The Problem
+For this activity your team will implement a version of concurrent grep via UntypedActors. Your program will be invoked on the command line as follows:
+
+java CGrep pattern [file . . .]
+
+You should familiarize yourself with the java.util.regex package, as you'll use this to do pattern matching. In particular, the pattern argument is an arbitrary regular expression conforming to the syntax recognized by the java.util.regex.Pattern class.
+
+A Regex tutorial including examples: http://www.vogella.com/articles/JavaRegularExpressions/article.html
+
+Note on Matching Lines
+
+A matching line is one where the regular expression matches any part of the line. To match the entire line the anchor characters caret (^) and dollar ($) are used.
+
+End Note
+
+Each file (or the standard input if no files are given) will be scanned by a ScanActor for occurrences of the pattern, using one actor per file. A ScanActor expects to receive exactly one immutable Configure message containing (a) a String with the name of the file to scan (or null for the standard input), and (b) an ActorRef to a CollectionActor, which collects and prints scan results. The actual format of the Configure objects is up to you.
+Each ScanActor will construct an immutable Found object containing  a String with the name of the file, and a List<String> with one entry in the list for each matching line. Each string in the list consists of the line number, a space, and the text of the line itself. The list must be ordered by location of the line in the file (i.e., first matching line at position 0, second matching line at position 1, etc.). The Found object is sent as the one and only message from the ScanActor to the CollectionActor.
+
+The CollectionActor receives two types of messages. The first, of class FileCount (which should be received exactly once), contains a count of the number of files being scanned. The format of this immutable message object are up to you. The remaining messages are Found objects, which, upon receipt, are printed by the CollectionActor. Printout consists of the file name (or "-" for standard input) and the list of matching lines. When all the Found messages have been processed, the CollectionActor shuts down all actors using Actors.registry().shutdown() - see page 186 in PCJVM for an example.
+
+The main program, in CGrep.java, performs the following activities:
+Create a CollectionActor, start it, and send the FileCount message to it.
+Create one ScanActor per file, start it, and send the appropriate Configure message to each such actor.
+Implementation Notes
+Obviously, then, the main method will be in a class CGrep contained in CGrep.java. You are free to create any other java files you need to solve the problem, but all classes must be in the default package. I will compile your source files using the command:
+
+javac *.java
+
+and then run the java command on CGrep with my test data files.
+
+Deliverables
+Submit a zip archive (and only a zip archive) named cgrep.zip to the CGrep with Actors Activity dropbox by the due date. The archive will contain CGrep.java and any other default package java source files used in your solution. You may (but need not) include a readme.txt file with any comments relevant to assessing your work.
+
+Of the 10 points available for this activity,
+
+2 will be granted on an all-or-nothing basis for a correct submission in accordance with the preceding specification,
+5 will be for functionality, based on both the execution results and an inspection of the source code,
+2 will be for the quality of the solution (naming, spacing, indentation, etc.), and
+1 will be based on whether or not the internal documentation is of acceptable quality.
+
+
+

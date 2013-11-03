@@ -1,0 +1,336 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+<link rel="stylesheet" type="text/css"
+	href="http://www.se.rit.edu/resources/style-sheets/SEdepartment.css">
+<script language="JavaScript">
+	var course_number = "SWEN-342"; // Change this to be the title of the course
+	var course_title = "Engineering of Concurrent & Distributed Software Systems"; // Change this to be the title of the course
+	var section = "01"; // Change this to be the title of the course
+	full_title = course_number + " " + course_title;
+</script>
+<!-- Do not change this -->
+<script language="JavaScript"
+	src="http://www.se.rit.edu/resources/js/se.js"></script>
+<script language="JavaScript">
+	document.title = course_number + "-" + section + " " + course_title; // No need to change this
+</script>
+<!-- Feel free to add custom styles if you like, but we'd rather put it in SEDepartment.css if at all possible -->
+<style type="text/css">
+</style>
+<title>SWEN-342 Schedule</title>
+</head>
+<body>
+	<header> <a href="http://www.se.rit.edu"
+		alt="Software Engineering Department"> <img
+		src="http://www.se.rit.edu/resources/images/se_logo.png">
+	</a> </header>
+	<h1>
+		<script language="JavaScript">
+			document.write(document.title);
+		</script>
+	</h1>
+	<h1>
+		<br>
+	</h1>
+	<div class="clear"></div>
+	<nav> </nav>
+	<ul>
+		<li><a href="../syllabus.html">Syllabus</a></li>
+	</ul>
+	<article> <header> </header> <br>
+	</article>
+	<h2>Class Schedule - Fall 2113</h2>
+	<table class="gridtable">
+		<tbody>
+			<tr>
+				<th>Week</th>
+				<th>Topics</th>
+				<th>Activities</th>
+				<th>Due&nbsp;</th>
+				<th>Reading / Resources</th>
+			</tr>
+			<tr>
+				<td>1 - Aug 26&nbsp;</td>
+				<td>Course Overview<br>
+				<a href="../slides/01-Introduction.pdf"> Distributed Systems
+						Introduction</a><br>
+				<a href="../slides/00-DistributedIntro-Rutgers.pdf">Distributed
+						Systems Intro (Rutgers)</a><br>
+				<a
+					href="https://www.ibm.com/developerworks/community/blogs/woolf/entry/fallacies_of_distributed_computing6?lang=en">
+						Designing Distributed Systems - Eight Fallacies</a><br> <br>
+				</td>
+				<td></td>
+				<td></td>
+				<td><span style="color: black;">POSA - Ch 2&nbsp;
+						&#8220;On Distributed Systems&#8221; <br>ENTER - Ch 1
+						"Introduction"
+				</span></td>
+			</tr>
+			<tr>
+				<td>2 - Sep 2</td>
+				<td><span style="font-weight: bold;">NO CLASS Monday Sep
+						2</span> <br> <span style="font-weight: bold;">Last day to
+						Drop/Add Tuesday Sep 3</span><br>
+				<a href="../slides/02-SystemModels-Architecture.pdf">
+						Distributed Systems Architectual Models</a><br>
+				<a href="../slides/03-SystemModels-Fundamental.pdf"> Distributed
+						Systems Fundamental Models</a><br>
+				<a href="../slides/Byzantine.pdf">Byzantine Failures</a></td>
+				<td><a href="../resources/Unit1-Questions.pdf">Unit 1
+						Questions</a></td>
+				<td></td>
+				<td><span style="color: black;"></span>GUIDE - Ch 2 &nbsp;"The
+					Way of the Cloud"<br>
+				<a href="../resources/fallacies.pdf">&#8220;Fallacies of
+						Distributed Computing Explained&#8221;</a></td>
+			</tr>
+			<tr>
+				<td>3 - Sep 9</td>
+				<td><a href="../slides/04-NetworkingPrinciples.pdf">Interprocess
+						Communication</a><br>
+				<a href="../slides/05-RemoteProcedureCalls.pdf">Remote Procedure
+						Calls</a><br>
+				<a href="../slides/07-Distributed%20Objects.pdf">Distributed
+						Objects</a><br>
+				<a href="../slides/06-JavaRMI.pdf">Java RMI</a><br></td>
+				<td><br>
+				<a
+					href="http://www.genady.net/rmi/v20/docs/tutorials/print_server.html">
+						Activity #1&nbsp;- Java RMI</a></td>
+				<td></td>
+				<td><a
+					href="http://www.ibm.com/developerworks/java/tutorials/j-rmicorba/">IBM
+						Developer Works : Java RMI Tutorial</a><br>
+				<a href="../resources/Round%20trip%20Java%20RMI.pdf">Round-Trip
+						Java RMI Call</a>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>4 - Sep 16</td>
+				<td><a href="../slides/Concurrency%20Intro.pdf">Concurrency
+						Introduction</a><br>
+				<a href="../slides/Threads.pdf">Java Thread Review</a><br>
+				<a href="../slides/POJC.pdf"> POJC - Plain Old Java Concurrency</a><br>
+				</td>
+				<td><a href="../activities/ThreadIntro.html">Activity #2 -
+						Thread Intro</a><br></td>
+				<td>Activity #2 Due Friday Sep 20</td>
+				<td>Ch 1-2 in JCIP and Ch 1-2 in PCJVM<br>
+				<br></td>
+			</tr>
+			<tr>
+				<td>5 - Sep 23</td>
+				<td><a href="../slides/Safe%20Object%20Sharing.pdf">Thread
+						Safe Objects</a><br>
+				<br></td>
+				<td><a href="../activities/Woolies.html">Activity #3 -
+						&nbsp;The Woolies</a><br>
+				<br></td>
+				<td>Activity #3 Due Wed Sep 25<br>
+				<span style="font-weight: bold;"><br></span></td>
+				<td>Ch 3-4 in JCIP and Ch 3 in PCJVM</td>
+			</tr>
+			<tr>
+				<td>6 - Sep 30</td>
+				<td class="tbd"><a href="../slides/Deadlock.pdf">Deadlock</a></td>
+				<td><a href="../activities/Dining_Philosophers.html">Activity
+						#4 - Dining Philosophers</a><br>
+				<a href="../projects/SWProjectDay.html">Project 1 Introduction</a></td>
+				<td><span style="font-weight: bold;"></span><a
+					href="../resources/Exam1-Topics.html"><span
+						style="font-weight: bold;">Exam 1 Monday&nbsp;Sep 30</span></a></td>
+				<td>Ch 5-6, 8 in JCIP</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr>
+				<td>7 - Oct 7</td>
+				<td><a href="../slides/Safe%20Thread%20Design.pdf">Thread
+						Safe Class Design</a><br>
+				<a href="../slides/Concurrent%20Collections.pdf">Concurrent Data
+						Structures</a><br></td>
+				<td><a href="../activities/Bankers_Algorithm.html">Activity
+						#5 - Bankers Algorithm</a><br></td>
+				<td>Activity #4 Due Monday Oct 7</td>
+				<td>Ch 13 in JCIP</td>
+			</tr>
+			<tr>
+				<td>8 - Oct 14</td>
+				<!-- <td>White-box Testing: Test-Driven Development</td>
+<td><a href="activities/tdd/index.html">TDD &amp; Mock
+Objects</a></td>
+-->
+				<td><span style="font-weight: bold;">NO CLASS Monday Oct
+						14 - Come to class on Tuesday Oct 15!<br>
+				</span><a href="../slides/Latches-and-Barriers.pdf"> Latches &amp;
+						Barriers</a><br>
+				<a href="../slides/Subcontracting.pdf">Scheduling, Pools &amp;
+						Tasks</a><br>
+				<br> <span style="font-weight: bold;"></span></td>
+				<td><br></td>
+				<td style="font-weight: bold;"><span
+					style="font-weight: normal;">Activity #5 Due Friday Oct 18</span><br>
+				<br></td>
+				<td><br>
+				<span style="font-family: Helvetica, Arial, sans-serif;"></span></td>
+			</tr>
+			<!-- <tr>
+<td colspan=2 class=winterbreak>Dec. 24 - Jan. 6</td>
+<td colspan=100% class=winterbreak><b>Winter break</b></td>
+</tr>
+-->
+			<tr>
+				<td>9 - Oct 21</td>
+				<td><a href="../slides/Locks%20&amp;%20Conditions.pdf">
+						Locks &amp; Conditions</a></td>
+				<td><a href="../activities/BucketHashMap.html">Activity #6
+						- Bucket Hash Map</a><br>
+				<br></td>
+				<td>Project 1 Due Wed Oct 23<br>Activity #6 Due Sun Oct 27<br>
+				<br></td>
+				<td><span style="font-family: Helvetica, Arial, sans-serif;"></span>Ch
+					8 (8.1 thru 8.8, 8.13) in PCJVM<span
+					style="font-weight: bold; font-family: Helvetica, Arial, sans-serif;"><br>
+				</span><span style="font-family: Helvetica, Arial, sans-serif;">
+						(Note: &nbsp;Scala sections are optional)<br>
+				</span><br>
+				<a
+					href="http://pragprog.com/magazines/2013-01/functional-programming-basics"></a></td>
+			</tr>
+			<tr>
+				<td>10 - Oct 28</td>
+				<td><a href="../slides/Actors%20Overview.pdf">Actors</a><br>
+				</td>
+				<td><a href="../activities/ConcurrentGrep-Actors.html">Activity
+						#7 - Concurrent Grep</a><br>Project 2 Introduction</td>
+				<td><span style="font-weight: bold;"></span></td>
+				<td>Ch 9 (9.2, 9.3) in PCJVM<br> <span
+					style="font-family: Helvetica, Arial, sans-serif;"></span><a
+					href="http://pragprog.com/magazines/2013-01/functional-programming-basics">Bob
+						Martin blog on Functional Programming</a></td>
+			</tr>
+			<tr>
+				<td>11 - Nov 4</td>
+				<td>Actors</td>
+				<td>Actvity #8 - Actor Design</td>
+				<td>Activity #7 Due Mon Nov 4<span style="font-weight: bold;"><br>Exam
+						2 Friday Nov 8</span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>12 - Nov 11</td>
+				<td>Service Oriented Software (SOP, SOA)<br> <span
+					style="font-weight: bold;">Last Day to Withdraw Friday Nov
+						15</span><br>
+				</td>
+				<td><br></td>
+				<td><br></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>13 - Nov 18</td>
+				<td>Middleware<br>
+				</td>
+				<td>Project 3 Introduction</td>
+				<td>Project 2 Due Monday Nov 18</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>14 - Nov 25</td>
+				<td><span style="font-weight: bold;">NO CLASSES
+						Wednesday &amp; Friday - Nov 27 &amp; 29</span></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>15 - Dec 2</td>
+				<td>Transaction Management<br> Distributed Transactions<br>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>16 - Dec 9</td>
+				<td><span style="font-weight: bold;">LAST CLASS
+						Wednesday - Dec 11<br>
+				</span>Fault Tolerance &amp; Robustness<br> Final Review<span
+					style="font-weight: bold;"></span></td>
+				<td></td>
+				<td>Project 3 Due Monday Dec 9</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>17 -Dec 16</td>
+				<td style="font-weight: bold;">Final Exam - Wednesday Dec 18
+					12:30-2:30</td>
+				<td></td>
+				<td><span style="font-weight: bold;">Final Exam -
+						Wednesday Dec 18</span></td>
+				<td></td>
+			</tr>
+			<tr id="examrow">
+			</tr>
+		</tbody>
+	</table>
+	<h2>Reading Reference Key</h2>
+	<span style="font-weight: bold;">ENTER</span>
+	<span style="font-weight: bold; font-style: italic;"> = &nbsp;</span>
+	<span style="font-style: italic;">Enterprise Software
+		Architecture &amp; Design, </span>Dominic Duggan, 2012
+	<span style="font-weight: bold; font-style: italic;"> (Wiley
+		Books on-line via Wallace Library)<br>
+	</span>
+	<span style="font-weight: bold;">GUIDE</span> =
+	<span style="font-style: italic;">Guide to Reliable Distributed
+		Systems</span>, Kenneth Birman, 2012
+	<span style="font-weight: bold; font-style: italic;">(Springer
+		Books on-line via Wallace Library)</span>
+	<span style="font-weight: bold;"><br></span>
+	<span style="font-weight: bold;">JCIP</span>
+	<b style=""><i style=""> = </i></b>
+	<span style="font-style: italic;">Java Concurrency in Practice</span>,
+	Brian Goetz, et. al., Addison-Wesley, 2006
+	<br>
+	<span style="font-weight: bold;">PCJVM</span> =
+	<span style="font-style: italic;">Programming Concurrency on the
+		JVM</span>, Venkat Subramaniam, Pragmatic Programmers, 2011
+	<br>
+	<span style="font-weight: bold;"></span>
+	<span style="font-weight: bold;">POSA</span> =&nbsp;
+	<span style="font-style: italic;">Pattern-Oriented Software
+		Architecture &#8211; Volume 4, A Pattern Language for Distributed
+		Computing</span>, Schmidt,
+	<span class="SpellE">Buschmann</span> &amp;
+	<span class="SpellE"><span class="GramE">Henney</span></span>
+	<span class="GramE"><span style="">&nbsp; </span><b style=""><i
+			style="">(</i></b></span>
+	<b style=""><i style="">on Books 24x7)<br>
+		<br></i></b>
+	<h2>Resources</h2>
+	<ul>
+		<li>Code listings from examples in "Java Concurrency in Practice"
+			-<a
+			href="http://jcip.net.s3-website-us-east-1.amazonaws.com/listings.html"><span
+				style="text-decoration: underline;">http://jcip.net.s3-website-us-east-1.amazonaws.com/listings.html</span></a><a
+			href="http://www.javaconcurrencyinpractice.com/listings.html"></a>
+		</li>
+		<li>Java Doc: <a
+			href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/package-summary.html">java.util.concurrent</a></li>
+		<li>Java Doc: <a
+			href="http://docs.oracle.com/javase/6/docs/api/java/util/Collections.html">java.util.collections</a></li>
+		<li>Akka : <a href="http://akka.io/">akka.io</a></li>
+		<li><a
+			href="../resources/Examples/Akka%20Environment%20Set-Up.html">Akka
+				environment set-up</a></li>
+	</ul>
+	<span style="font-weight: bold; font-style: italic;"><br></span>
+	<br>
+	<footer> <time title="Friday Nov 01, 2013 @ 12:57 [EDT]">
+	Last Rev: <span>Friday November 01, </span>2013</time> </footer>
+</body>
+</html>
