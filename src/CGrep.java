@@ -15,7 +15,7 @@ public class CGrep{
 	 * @param args, args[0] = pattern to be searched
 	 * 				args[1-n] = file names to search for the pattern
 	 */
-	public void main(String[] args){
+	public static void main(String[] args){
 		//stores the filecount from the command line argument
 		int filecount = 0;		
 		
@@ -28,7 +28,7 @@ public class CGrep{
 		ArrayList<String> files = new ArrayList<String>();
 		
 		if (args.length > 1){		//adds the file names to the array list
-			for (int i = 0; i < args.length; i++)
+			for (int i = 1; i < args.length; i++)
 				files.add(args[i]);
 			
 			filecount = files.size();
@@ -45,8 +45,7 @@ public class CGrep{
 				ActorRef sActor = system.actorOf(Props.create(ScanActor.class));
 				sActor.tell(new Configure(files.get(i),pattern,cActor), cActor);
 			}
-		}
-		else{
+		} else {
 			ActorRef sActor = system.actorOf(Props.create(ScanActor.class));
 			sActor.tell(new Configure(null,pattern,cActor), cActor);
 		}
