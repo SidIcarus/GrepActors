@@ -1,3 +1,4 @@
+import akka.actor.Actors;
 import akka.actor.UntypedActor;
 
 /**
@@ -35,7 +36,8 @@ public class CollectionActor extends UntypedActor {
 			}
 			
 			if(founds++ >= numOfFiles) {
-				this.getContext().system().shutdown();
+				//this.getContext().system().shutdown();
+				Actors.registry().shutdownAll();
 				
 			}
 		}
